@@ -1,19 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Converter
+            v-bind:imgsrc="imgsrc"
+            v-bind:units="units"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import Converter from "./components/Converter";
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  export default {
+    name: 'App',
+    data(){
+      return{
+        imgsrc : "/images/numbers.jpg",
+        units: {
+          feet: "Футы",
+          arshin: "Аршины",
+          metres: "Метры",
+          verst: "Версты"
+        }
+      }
+    },
+    components: {
+      Converter
+    }
   }
-}
 </script>
 
 <style>
